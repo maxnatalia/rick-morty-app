@@ -4,16 +4,27 @@ import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from "react-query/devtools";
 import RickMortyApp from './RickMortyApp';
+import { PagerProvider } from './context/pager-context';
 
-
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      staleTime: 1000 * 60 * 60,
+      retry: 1,
+      keepPreviousData: true
+    },
+  }
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <QueryClientProvider client={queryClient} >
-      <ReactQueryDevtools />
-      <RickMortyApp />
-    </QueryClientProvider>
+    <PagerProvider>
+      <QueryClientProvider client={queryClient} >
+        <ReactQueryDevtools />
+        <RickMortyApp />
+      </QueryClientProvider>
+    </PagerProvider>
   </React.StrictMode>
 );
 
