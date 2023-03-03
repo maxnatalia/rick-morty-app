@@ -2,7 +2,7 @@ import { Routes, Route, HashRouter } from "react-router-dom";
 import HomePage from "./components/pages/HomePage.js";
 import ErrorPage from "./components/pages/ErrorPage";
 import SingleCharacterPage from "./components/pages/SingleCharacterPage";
-import LocationsPage from "./components/pages/LocationsPage.js";
+import LocationsPage from "./components/pages/LocationsPage";
 import CharactersPage from "./components/pages/CharactersPage";
 import EpisodesPage from "./components/pages/EpisodesPage";
 
