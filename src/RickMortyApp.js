@@ -1,9 +1,9 @@
 import { Routes, Route, HashRouter } from "react-router-dom";
-import HomePage from "./components/pages/HomePage.js";
+import HomePage from "./pages/home/HomePage";
 import ErrorPage from "./components/pages/ErrorPage";
 import SingleCharacterPage from "./components/pages/SingleCharacterPage";
 import LocationsPage from "./components/pages/LocationsPage";
-import CharactersPage from "./components/pages/CharactersPage";
+import CharactersPage from "./pages/characters/CharactersPage";
 import EpisodesPage from "./components/pages/EpisodesPage";
 
 const RickMortyApp = () => {
