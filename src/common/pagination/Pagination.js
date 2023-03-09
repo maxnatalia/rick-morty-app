@@ -1,8 +1,8 @@
-import { usePagerContext } from "../../context/pager-context";
+import { useGlobalContext } from "../../context/global-context";
 import { Container, Button, PageInfo } from "./styled";
 
 const Pagination = ({ text, infoPage, disabled }) => {
-    const { page, prevPage, nextPage } = usePagerContext();
+    const { page, nextPage, prevPage } = useGlobalContext();
 
     return (
         <Container>
