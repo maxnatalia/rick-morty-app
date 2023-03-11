@@ -13,6 +13,6 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     body {
-
+        font-family: 'Hachi Maru Pop', cursive;
     }
 `;
