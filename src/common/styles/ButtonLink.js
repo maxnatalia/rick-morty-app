@@ -7,11 +7,13 @@ export const ButtonLink = styled(Link)`
     text-transform: uppercase;
     padding: 15px 20px;
     margin: 40px 80px;
-    border: 2px solid black;
+    border: 2px solid rgb(217,209,198);
     border-radius: 40px;
     font-size: 24px;
     letter-spacing: 2.5px;
     font-weight: 900;
+    background-color: rgb(217,209,198, .7);
+    box-shadow: 4px 4px 12px 0px rgba(66, 68, 90, 1);
     color: black;
     cursor: pointer;
     transition: all .3s ease;
@@ -22,7 +24,7 @@ export const ButtonLink = styled(Link)`
     }
 
     @media (max-width: 767px) {
-        margin: 20px 40px;
-      
+        margin: 20px;
+        font-size: 18px;
     }
 `;
