@@ -1,11 +1,13 @@
-import { Wrapper, Title } from "./styled";
+import { Paragraph } from "../../common/styles/Paragraph";
+import { Title } from "../styles/Title";
 
-const StatusComponent = ({ statusText }) => {
+const StatusComponent = ({ statusText, titleText }) => {
     return (
-        <Wrapper>
-            <Title>{statusText}</Title>
-        </Wrapper>
+        <div>
+            <Title>{titleText}</Title>
+            <Paragraph>{statusText}</Paragraph>
+        </div>
     )
-}
+};
 
 export default StatusComponent;
