@@ -4,7 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from "react-query/devtools";
 import RickMortyApp from './RickMortyApp';
-import { PagerProvider } from './context/pager-context';
+import { GlobalProvider } from './context/global-context';
 import { GlobalStyle } from './GlobalStyle';
 
 const queryClient = new QueryClient({
@@ -20,13 +20,13 @@ const queryClient = new QueryClient({
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <PagerProvider>
+    <GlobalProvider>
       <QueryClientProvider client={queryClient} >
         <ReactQueryDevtools />
         <GlobalStyle />
         <RickMortyApp />
       </QueryClientProvider>
-    </PagerProvider>
+    </GlobalProvider>
   </React.StrictMode>
 );
 
