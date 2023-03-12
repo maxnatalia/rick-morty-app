@@ -1,5 +1,6 @@
 import { useGlobalContext } from "../../context/global-context";
-import { Container, Button, PageInfo } from "./styled";
+import { Container, PageInfo } from "./styled";
+import { Button } from "../styles/Button";
 
 const Pagination = ({ text, infoPage, disabled }) => {
     const { page, nextPage, prevPage } = useGlobalContext();
