@@ -2,33 +2,22 @@ import { wait } from "@testing-library/user-event/dist/utils";
 import { useQuery } from "react-query";
 import { rickandmortyapi } from "../api/rickMortyApi"
 
-export const useLocations = (page) => {
-
-
+export const useLocations = (page, type, dimension, name) => {
 
     const getLocation = async ({ queryKey }) => {
         await wait(1000);
-        const [, { page }] = queryKey;
-        const params = new URLSearchParams({ page });
+        const [, { page, type, dimension, name }] = queryKey;
+        const params = new URLSearchParams({ page, type, dimension, name });
 
-        const response = await rickandmortyapi.get(`/location?${params}`);
+        const { data } = await rickandmortyapi.get(`/location/?${params}`);
 
-        console.log(response.data.results)
-        return response.data;
+        return data;
     };
 
-    const { isLoading, isError, isFetching, isSuccess, data } = useQuery(
-        ["locations", { page }],
+    const { isLoading, isError, isSuccess, data: locations } = useQuery(
+        ["locations", { page, type, dimension, name }],
         getLocation,
-        {
-            refetchOnWindowFocus: false,
-            staleTime: 1000 * 60 * 60,
-            keepPreviousData: true,
-        },
-
     );
 
-
-
-    return { data, isLoading, isError, isSuccess, isFetching };
-}
+    return { locations, isLoading, isError, isSuccess };
+};
