@@ -3,20 +3,16 @@ import { useQuery } from "react-query";
 import { Tag } from "./styled";
 
 const CharacterTags = ({ url }) => {
-    const { isLoading, error, data } = useQuery(url, () => axios.get(url));
-
-    if (isLoading) {
-        return <span>Loading...</span>;
-    }
-
-    if (error) {
-        return null;
-    }
+    const { isLoading, isError, data } = useQuery(url, () => axios.get(url));
 
     return (
-        <Tag to={`/character/${data.data.id}`} key={data.data.id}>
-            {data.data.name}
-        </Tag>
+        <div>
+            {isLoading && <span>Loading...</span>}
+            {isError && null}
+            {data && <Tag to={`/character/${data.data.id}`} key={data.data.id}>
+                {data.data.name}
+            </Tag>}
+        </div>
     );
 };
 
