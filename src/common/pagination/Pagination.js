@@ -1,5 +1,5 @@
 import { useGlobalContext } from "../../context/global-context";
-import { Container, PageInfo } from "./styled";
+import { Container, PageInfo, Wrapper } from "./styled";
 import { Button } from "../styles/Button";
 
 const Pagination = ({ text, infoPage, disabled }) => {
@@ -7,11 +7,11 @@ const Pagination = ({ text, infoPage, disabled }) => {
 
     return (
         <Container>
-            <div>
+            <Wrapper>
                 <Button onClick={prevPage} disabled={page === 1}>Prev</Button>
                 <PageInfo>{infoPage}</PageInfo>
                 <Button onClick={nextPage} disabled={disabled}>Next</Button>
-            </div>
+            </Wrapper>
             <p>{text}</p>
         </Container>
     )
