@@ -20,5 +20,9 @@ export const Button = styled.button`
     &:hover:not(:disabled) {
         transform: scale(1.1);
         box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-    }    
+    }   
+    
+    @media (max-width: 767px) {
+        padding: 10px 20px;
+    }
 `;
