@@ -6,8 +6,7 @@ export const ButtonLink = styled(Link)`
     text-decoration: none;
     text-transform: uppercase;
     padding: 15px 20px;
-    margin-left: 30px;
-    margin-bottom: 30px;
+    margin: 20px;
     border: 2px solid rgb(217,209,198);
     border-radius: 40px;
     font-size: 24px;
@@ -25,7 +24,7 @@ export const ButtonLink = styled(Link)`
     }
 
     @media (max-width: 767px) {
-        margin: 20px;
+        margin: 10px;
         font-size: 18px;
     }
 `;
