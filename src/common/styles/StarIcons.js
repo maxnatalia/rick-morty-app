@@ -18,6 +18,23 @@ const StarIcons = css`
     ${({ big }) => big && css`
         font-size: 100px;
     `}
+
+    ${({ pulse }) => pulse && css`
+        animation: pulse 2s linear infinite;
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.7);
+            }
+            50% {
+                transform: scale(1);
+                filter: brightness(150%);
+            }
+            100% {
+                transform: scale(0.7);
+            }
+        }
+    `}
 `;
 
 export const UnFavouriteIcon = styled(AiOutlineStar)`

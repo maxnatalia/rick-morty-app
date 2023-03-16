@@ -17,6 +17,7 @@ export const ButtonLink = styled(Link)`
     color: black;
     cursor: pointer;
     transition: all .3s ease;
+    position: relative;
 
     &:hover {
         transform: scale(1.1);
