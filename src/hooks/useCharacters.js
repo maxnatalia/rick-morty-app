@@ -3,7 +3,6 @@ import { rickandmortyapi } from "../api/rickMortyApi";
 import { wait } from "../helpers/wait";
 
 export const useCharacters = (filters, page) => {
-
     const getCharacters = async ({ queryKey }) => {
         await wait(1000);
         const [, { filters, page }] = queryKey;
