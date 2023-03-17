@@ -1,4 +1,4 @@
-import { wait } from "@testing-library/user-event/dist/utils";
+import { wait } from "../helpers/wait";
 import { useQuery } from "react-query";
 import { rickandmortyapi } from "../api/rickMortyApi"
 
@@ -12,11 +12,13 @@ export const useLocations = (page, type, dimension, name) => {
         const { data } = await rickandmortyapi.get(`/location/?${params}`);
 
         return data;
+
     };
 
     const { isLoading, isError, isSuccess, data: locations } = useQuery(
         ["locations", { page, type, dimension, name }],
         getLocation,
+
     );
 
     return { locations, isLoading, isError, isSuccess };
