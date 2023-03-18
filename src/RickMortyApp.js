@@ -5,6 +5,7 @@ import SingleCharacterPage from "./pages/singleCharacter/SingleCharacterPage";
 import LocationsPage from "./pages/locations/LocationsPage";
 import CharactersPage from "./pages/characters/CharactersPage";
 import EpisodesPage from "./pages/episodes/EpisodesPage";
+import FavouritesPage from "./pages/favourites/FavouritesPage";
 
 const RickMortyApp = () => {
     return (
@@ -14,6 +15,7 @@ const RickMortyApp = () => {
                 <Route path="/characters" element={<CharactersPage />} />
                 <Route path="/locations" element={<LocationsPage />} />
                 <Route path="/episode" element={<EpisodesPage />} />
+                <Route path="/favourites" element={<FavouritesPage />} />
                 <Route path="/" element={<HomePage />} />
                 <Route path="*" element={<ErrorPage />} />
             </Routes>
