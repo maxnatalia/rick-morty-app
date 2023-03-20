@@ -16,7 +16,11 @@ const StarIcons = css`
     }
 
     ${({ big }) => big && css`
-        font-size: 100px;
+        font-size: 80px;
+
+        @media(max-width:767px) {
+            font-size: 60px;
+        }
     `}
 
     ${({ pulse }) => pulse && css`
