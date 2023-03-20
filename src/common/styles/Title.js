@@ -12,5 +12,6 @@ export const Title = styled.h2`
 
     @media (max-width: 767px) {
         font-size: 42px;
+        text-align: left;
     }
 `;
