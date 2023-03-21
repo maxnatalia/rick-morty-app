@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const ButtonLink = styled(Link)`
@@ -18,6 +18,16 @@ export const ButtonLink = styled(Link)`
     cursor: pointer;
     transition: all .3s ease;
     position: relative;
+
+    ${({ fav }) => fav && css`
+        border-radius: 50%;
+        position: fixed;
+        top:0;
+        right: 0;
+        z-index: 10;
+        padding: 5px 10px;
+        margin: 10px;
+    `}
 
     &:hover {
         transform: scale(1.1);
