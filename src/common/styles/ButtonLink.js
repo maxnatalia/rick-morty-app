@@ -2,7 +2,11 @@ import styled, { css } from "styled-components";
 import { Link } from "react-router-dom";
 
 export const ButtonLink = styled(Link)`
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 260px;
     text-decoration: none;
     text-transform: uppercase;
     padding: 15px 20px;
@@ -20,6 +24,7 @@ export const ButtonLink = styled(Link)`
     position: relative;
 
     ${({ fav }) => fav && css`
+        width: auto;
         border-radius: 50%;
         position: fixed;
         top:0;
