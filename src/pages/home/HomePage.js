@@ -11,12 +11,14 @@ const HomePage = () => {
                 <Paragraph>Explore different dimensions, planets and discover characters with Rick and Morty App</Paragraph>
             </Header>
             <WrapperLink>
+                <ButtonLink to="/favourites">Favourites</ButtonLink>
                 <ButtonLink to="/characters">Characters</ButtonLink>
                 <ButtonLink to="/locations">Locations</ButtonLink>
                 <ButtonLink to="/episode">Episodes</ButtonLink>
+                <ButtonLink to="/quiz">Quiz</ButtonLink>
             </WrapperLink>
             <Footer>
-                <Paragraph>Rick and Morty App &copy; {new Date().getFullYear()} All Rights Reserved</Paragraph>
+                <Paragraph>Rick and Morty App &copy; {new Date().getFullYear()} Natalia Mazur-Żurek</Paragraph>
             </Footer>
         </Container>
     )
