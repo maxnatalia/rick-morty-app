@@ -1,42 +1,52 @@
-import { LocationsContainer, LocationWrapper, LocationNumber, LocationName, LocationType, LocationData, ResidentsList, Button } from "./styled";
+import { LocationsContainer, LocationWrapper, LocationNumber, LocationName, LocationType, LocationData, WrapperTags } from "./styled";
 import { useState } from "react";
-import Cast from "../../common/Cast";
+import CharacterTags from "../../common/characterListTags/CharacterTags";
+import { Button } from "../../common/styles/Button";
 
 const Location = ({ locations }) => {
-    const [showAllResidents, setShowAllResidents] = useState(false);
+    const [showAllResidents, setShowAllResidents] = useState([]);
 
-    const handleResidentsShow = () => {
-        setShowAllResidents(!showAllResidents);
+    const handleResidentsShow = (index) => {
+        setShowAllResidents(prevShowAllResidents => {
+            const newState = [...prevShowAllResidents];
+            newState[index] = !newState[index];
+            return newState;
+        });
     };
 
     return (
         <LocationsContainer>
-            {locations?.results.map((location) => {
+            {locations?.results.map((location, index) => {
                 return <LocationWrapper key={location.id}>
                     <LocationNumber>{location.id}</LocationNumber>
                     <LocationName>{location.name}</LocationName>
-                    <LocationData>Type: <LocationType>{location.type}</LocationType></LocationData>
-                    <LocationData>Dimension: <LocationType>{location.dimension}</LocationType></LocationData>
-                    <div>
-                        {location.residents.length === 0 ? null : <h3>Residents:</h3>}
-                        <ResidentsList>
-                            {showAllResidents
-                                ? location.residents.map((residentUrl) => (
-                                    <Cast key={residentUrl} url={residentUrl} />
-                                ))
-                                : location.residents.slice(0, 3).map((residentUrl) => (
-                                    <Cast key={residentUrl} url={residentUrl} />
-                                ))}
-                        </ResidentsList>
-                    </div>
+                    <LocationData>Type:
+                        <LocationType>{location.type}</LocationType>
+                    </LocationData>
+                    <LocationData>Dimension:
+                        <LocationType>{location.dimension}</LocationType>
+                    </LocationData>
+                    {location.residents.length === 0
+                        ? null
+                        : <LocationData>Residents:</LocationData>
+                    }
+                    <WrapperTags>
+                        {showAllResidents[index]
+                            ? location.residents.map((residentUrl) => (
+                                <CharacterTags key={residentUrl} url={residentUrl} />
+                            ))
+                            : location.residents.slice(0, 3).map((residentUrl) => (
+                                <CharacterTags key={residentUrl} url={residentUrl} />
+                            ))}
+                    </WrapperTags>
                     {location.residents.length > 3 &&
-                        <Button onClick={handleResidentsShow}>
-                            {showAllResidents ? "Hide More" : "Show More"}
+                        <Button onClick={() => handleResidentsShow(index)}>
+                            {showAllResidents[index] ? "Hide More" : "Show More"}
                         </Button>}
                 </LocationWrapper>
             })}
         </LocationsContainer>
     )
-}
+};
 
 export default Location;
