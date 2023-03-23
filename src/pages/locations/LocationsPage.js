@@ -1,5 +1,4 @@
 import { useLocations } from "../../hooks/useLocations";
-import { Link } from "react-router-dom";
 import { useGlobalContext } from "../../context/global-context";
 import Pagination from "../../common/pagination/Pagination";
 import { useIsFetching } from "react-query";
@@ -10,7 +9,9 @@ import Location from "./Location";
 import { Title } from "../../common/styles/Title";
 import { Container } from "../../common/styles/Container";
 import StatusComponent from "../../common/statusComponent";
-import { ButtonLink } from "../../common/styles/ButtonLink";
+import { LoadingSpinner } from "../../common/styles/LoadingSpinner";
+import ButtonFavourites from "../../common/buttonFavourites/ButtonFavourites";
+import ButtonLinksWrapper from "../../common/buttonLinksWrapper/ButtonLinksWrapper";
 
 const LocationsPage = () => {
     const { page, setPage, type, dimension, name } = useGlobalContext();
@@ -19,21 +20,25 @@ const LocationsPage = () => {
     const isFetching = useIsFetching();
 
     useEffect(() => {
-        setPage(1);
-    }, [type, dimension, name, location]);
+        const setPageValue = () => {
+            setPage(1);
+        };
+        setPageValue();
+    }, [type, dimension, name, location, setPage]);
 
     return (
         <Container>
             <Title>Locations</Title>
+            <ButtonFavourites />
             <SearchLocation />
-            {isLoading && <StatusComponent statusText={"Loading..."} />}
-            {isError && <StatusComponent statusText={"Sorry, no locations found..."} />}
+            {isLoading && <StatusComponent statusText={"Loading Locations..."} titleText={<LoadingSpinner />} />}
+            {isError && <StatusComponent statusText={"No locations found..."} titleText={"Sorry...😢"} />}
             <Location locations={locations} />
-            <ButtonLink to="/">Back Home</ButtonLink>
-            <Pagination
+            <ButtonLinksWrapper />
+            {!isError && <Pagination
                 text={locations?.info?.pages ? `Page ${page} out of ${locations?.info?.pages}` : ""}
-                infoPage={isFetching ? "Loading..." : page}
-                disabled={!!locations?.info?.pages && locations?.info?.pages <= page} />
+                infoPage={isFetching ? <LoadingSpinner /> : page}
+                disabled={!!locations?.info?.pages && locations?.info?.pages <= page} />}
         </Container>
     )
 };
