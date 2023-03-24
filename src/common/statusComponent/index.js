@@ -1,5 +1,4 @@
-import { Paragraph } from "../../common/styles/Paragraph";
-import { Title } from "../styles/Title";
+import { Title, Paragraph } from "../styles";
 
 const StatusComponent = ({ statusText, titleText }) => {
     return (

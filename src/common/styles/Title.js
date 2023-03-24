@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Title = styled.h2`
     font-family: 'Creepster', cursive;
@@ -14,4 +14,12 @@ export const Title = styled.h2`
         font-size: 42px;
         text-align: left;
     }
+
+    ${({ big }) => big && css`
+        font-size: 80px;
+
+        @media(max-width: 767px) {
+            text-align: center;
+        }
+    `}
 `;
