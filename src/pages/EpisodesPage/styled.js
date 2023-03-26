@@ -8,7 +8,7 @@ export const EpisodesWrapper = styled.div`
     gap: 60px;
     padding: 40px 80px;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         padding: 10px;
     }
 `;
@@ -17,7 +17,7 @@ export const DataEpisode = styled.div`
     padding: 20px;
     min-width: 350px;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         padding: 10px;
         min-width: 250px;
     }
@@ -28,9 +28,9 @@ export const EpisodeWrapper = styled.div`
     position: relative;
     display: flex;
     align-items: center;
-    border: 1px solid black;
-    border-radius: 40px;
-    box-shadow: 4px 4px 12px 0px rgba(66, 68, 90, 1);
+    border: 1px solid ${({ theme }) => theme.color.secondaryColor};
+    border-radius: ${({ theme }) => theme.borderRadius.medium};
+    box-shadow: ${({ theme }) => theme.boxShadow.lightShadow};
     
     @media (max-width: 991px) {
       flex-direction: column;
@@ -44,16 +44,16 @@ export const EpisodeNumber = styled.span`
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgb(217,209,198);
+    background-color: ${({ theme }) => theme.color.primaryColor};
     font-size: 20px;
     font-weight: 600;
-    border-radius: 50%;
-    box-shadow: 4px 4px 12px 0px rgba(66, 68, 90, 1);
+    border-radius: ${({ theme }) => theme.borderRadius.big};
+    box-shadow: ${({ theme }) => theme.boxShadow.lightShadow};
     position: absolute;
     top: -45px;
     left: -45px;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         width: 80px;
         height: 80px;
         font-size: 16px;
@@ -67,7 +67,7 @@ export const ListCast = styled.div`
     gap: 20px;
     padding: 20px;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         padding: 5px;
     }
 `;
@@ -76,13 +76,13 @@ export const EpisodeName = styled.h3`
     font-size: 24px;
     letter-spacing: 2px;
     text-align: center;
-    background: rgba(66, 68, 90, .8);
-    color: rgb(217,209,198);
-    box-shadow: 4px 4px 12px 0px rgba(66, 68, 90, 1);
-    border-radius: 10px;
+    background: ${({ theme }) => theme.color.darkColor};
+    color: ${({ theme }) => theme.color.primaryColor};
+    box-shadow: ${({ theme }) => theme.boxShadow.lightShadow};
+    border-radius: ${({ theme }) => theme.borderRadius.small};
     padding: 10px;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         font-size: 20px;
     }
 `;
