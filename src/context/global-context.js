@@ -1,10 +1,9 @@
 import { useContext, createContext } from 'react'
-import useFavourites from '../hooks/useFavourites';
-// import useLocalStorage from '../hooks/useLocalStorage';
-import { usePager } from '../hooks/usePager';
-import { useSearchCharacter } from '../hooks/useSearchCharacter';
-import useSearchEpisode from '../hooks/useSearchEpisode';
-import useSearchLocation from '../hooks/useSearchLocation';
+import { usePager } from '../common/Pagination/usePager';
+import { useSearchCharacter } from '../pages/CharactersPage/SearchCharacter/useSearchCharacter';
+import useFavourites from '../pages/FavouritesPage/useFavourites';
+import useSearchEpisode from '../pages/EpisodesPage/SearchEpisode/useSearchEpisode';
+import useSearchLocation from '../pages/LocationsPage/SearchLocation/useSearchLocation';
 
 const GlobalContext = createContext();
 
@@ -15,8 +14,8 @@ export const GlobalProvider = ({ children }) => {
     const { filters, setFilters, handleFilterChange, handleClear } = useSearchCharacter();
     const { name, type, dimension, handleClearLocations, handleDimension, handleType, handleName } = useSearchLocation();
     const { nameEpisode, setNameEpisode, handleClearName, handleInputName } = useSearchEpisode();
-    const { favourites, setFavourites, handleAddFavourites, handleRemoveFavourites, isFavourite } = useFavourites();
-    // const { getFavourites, saveFavourites } = useLocalStorage();
+    const { favourites, setFavourites, handleAddFavourites, handleRemoveFavourites, isFavourite, toggleFavourite, handleFavouriteClick } = useFavourites();
+
     return (
         <GlobalContext.Provider value={{
             page,
@@ -42,7 +41,9 @@ export const GlobalProvider = ({ children }) => {
             setFavourites,
             handleAddFavourites,
             handleRemoveFavourites,
-            isFavourite
+            isFavourite,
+            toggleFavourite,
+            handleFavouriteClick
         }}>
             {children}
         </GlobalContext.Provider>
