@@ -2,14 +2,14 @@ import styled from "styled-components";
 
 export const Button = styled.button`
     padding: 10px 35px;
-    border-radius: 40px;
-    border: 2px solid rgb(217,209,198);
+    border-radius: ${({ theme }) => theme.borderRadius.medium};
+    border: 2px solid ${({ theme }) => theme.color.primaryColor};
     background-color: transparent;
     text-transform: uppercase;
     font-weight: 600;
     font-size: 18px;
-    box-shadow: 4px 4px 12px 0px rgba(66, 68, 90, 1);
-    background-color: rgb(217,209,198, .7);
+    box-shadow: ${({ theme }) => theme.boxShadow.lightShadow};
+    background-color: ${({ theme }) => theme.color.lightColor};
     cursor: pointer;
     transition: all .3s ease;
 
@@ -19,10 +19,10 @@ export const Button = styled.button`
 
     &:hover:not(:disabled) {
         transform: scale(1.1);
-        box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+        box-shadow: ${({ theme }) => theme.boxShadow.darkShadow};
     }   
     
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         padding: 10px 20px;
     }
 `;
