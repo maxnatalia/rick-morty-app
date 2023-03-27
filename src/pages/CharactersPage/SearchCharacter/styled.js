@@ -27,7 +27,7 @@ export const LabelSelect = styled.label`
 
 export const LabelName = styled.span`
     text-transform: capitalize;
-    background: rgba(66, 68, 90, .5);
+    background: ${({ theme }) => theme.color.mediumColor};
     border-radius: 20px;
     padding: 5px 10px;
     letter-spacing: 2px;
@@ -39,9 +39,9 @@ export const Select = styled.select`
     color: white;
     letter-spacing: 1.7px;
     padding: 10px 15px;
-    border-radius: 40px;
-    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-    border: 1px solid black;
-    background: rgba(66, 68, 90, .5);
+    border-radius: ${({ theme }) => theme.borderRadius.medium};
+    box-shadow: ${({ theme }) => theme.boxShadow.darkShadow};
+    border: 1px solid ${({ theme }) => theme.color.secondaryColor};
+    background: ${({ theme }) => theme.color.mediumColor};
     cursor: pointer;
 `;
