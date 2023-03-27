@@ -1,5 +1,6 @@
 import { useGlobalContext } from "../../context/global-context";
 import ButtonLinksWrapper from "../../common/ButtonLinksWrapper";
+import ButtonFavourites from "../../common/ButtonFavourites";
 import { Container, Paragraph, Title, Button } from "../../common/styles";
 import { FavouritesContainer, FavouriteWrapper, FavouriteLink, Image } from "./styled";
 
@@ -9,6 +10,7 @@ const FavouritesPage = () => {
     return (
         <Container>
             <Title>Favourites</Title>
+            <ButtonFavourites />
             <Paragraph>
                 {favourites !== null && favourites.length === 0
                     ? "Unfortunately, you don't have any favourite characters"
