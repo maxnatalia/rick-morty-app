@@ -4,18 +4,18 @@ import { Link } from "react-router-dom";
 export const Tag = styled(Link)`
     text-decoration: none;
     padding: 10px 15px;
-    border: 1px solid rgb(217,209,198);
-    border-radius: 40px;
-    background-color: rgba(66, 68, 90, .9);
-    color: rgb(217,209,198);
+    border: 1px solid ${({ theme }) => theme.color.primaryColor};
+    border-radius: ${({ theme }) => theme.borderRadius.medium};
+    background-color: ${({ theme }) => theme.color.darkColor};
+    color: ${({ theme }) => theme.color.primaryColor};
     transition: all .3s ease;
 
     &:hover {
         filter: brightness(120%);
-        box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+        box-shadow: ${({ theme }) => theme.boxShadow.darkShadow};
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         font-size: 14px;
         padding: 5px 10px;
     }
