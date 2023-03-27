@@ -6,7 +6,7 @@ const ButtonFavourites = () => {
     const { favourites } = useGlobalContext();
 
     return (
-        <ButtonLink fav="true" to="/favourites" title="Go to My Favourites">
+        <ButtonLink fav="true" to="/favourites" title="My Favourites">
             <FavouriteIcon big="true" />
             <CountFavourites>{favourites !== null && favourites.length}</CountFavourites>
             <EffectGlow />

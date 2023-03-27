@@ -11,12 +11,13 @@ export const EffectGlow = styled.span`
     position: absolute;
     top: 50%;
     left: 50%;
+    z-index: -1;
     transform: translateX(-50%) translateY(-50%) scale(1);
     opacity: 1;
     width: 45px;
     height: 45px;
-    border-radius: 50%;
-    background-color:rgb(217,209,198, .5);
+    border-radius: ${({ theme }) => theme.borderRadius.big};
+    background-color:${({ theme }) => theme.color.primaryColor};
     animation: glow 1s ease-out infinite;
 
     @keyframes glow {
