@@ -53,9 +53,9 @@ const SingleCharacterPage = () => {
                             <Paragraph>Location: {character.location.name}</Paragraph>
                         </DataCharacter>
                     </Wrapper>
+                    <ButtonLinksWrapper />
                 </>
             }
-            <ButtonLinksWrapper />
         </Container>
     )
 };
