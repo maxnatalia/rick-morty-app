@@ -3,10 +3,10 @@ import styled from "styled-components";
 export const Input = styled.input`
     min-width: 300px;
     padding: 15px;
-    border-radius: 40px;
-    box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
-    border: 1px solid black;
-    background: rgba(66, 68, 90, .5);
+    border-radius: ${({ theme }) => theme.borderRadius.medium};
+    box-shadow: ${({ theme }) => theme.boxShadow.darkShadow};
+    border: 1px solid ${({ theme }) => theme.color.secondaryColor};
+    background: ${({ theme }) => theme.color.mediumColor};
     letter-spacing: 1.7px;
     color: white;
 
