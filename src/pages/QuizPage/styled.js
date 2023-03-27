@@ -9,6 +9,7 @@ export const Wrapper = styled.div`
 `;
 
 export const QuizContainer = styled.div`
+    max-width: 60%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,6 +20,10 @@ export const QuizContainer = styled.div`
     border-radius: ${({ theme }) => theme.borderRadius.medium};
     box-shadow: ${({ theme }) => theme.boxShadow.darkShadow};
     position: relative;
+
+    @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
+        max-width: 100%;
+    }
 `;
 
 export const AnswersWrapper = styled.div`
