@@ -11,21 +11,21 @@ export const ButtonLink = styled(Link)`
     text-transform: uppercase;
     padding: 15px 20px;
     margin: 20px;
-    border: 2px solid rgb(217,209,198);
-    border-radius: 40px;
+    border: 2px solid ${({ theme }) => theme.color.primaryColor};
+    border-radius: ${({ theme }) => theme.borderRadius.medium};
     font-size: 24px;
     letter-spacing: 2.5px;
     font-weight: 900;
-    background-color: rgb(217,209,198, .7);
-    box-shadow: 4px 4px 12px 0px rgba(66, 68, 90, 1);
-    color: black;
+    background-color: ${({ theme }) => theme.color.lightColor};
+    box-shadow: ${({ theme }) => theme.boxShadow.lightShadow};
+    color: ${({ theme }) => theme.color.secondaryColor};
     cursor: pointer;
     transition: all .3s ease;
     position: relative;
 
     ${({ fav }) => fav && css`
         width: auto;
-        border-radius: 50%;
+        border-radius: ${({ theme }) => theme.borderRadius.big};
         position: fixed;
         top:0;
         right: 0;
@@ -36,10 +36,10 @@ export const ButtonLink = styled(Link)`
 
     &:hover {
         transform: scale(1.1);
-        box-shadow: 8px 8px 24px 0px rgba(66, 68, 90, 1);
+        box-shadow: ${({ theme }) => theme.boxShadow.darkShadow};
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         margin: 10px;
         font-size: 18px;
     }
