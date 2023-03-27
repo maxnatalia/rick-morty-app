@@ -6,6 +6,8 @@ import { ReactQueryDevtools } from "react-query/devtools";
 import RickMortyApp from './RickMortyApp';
 import { GlobalProvider } from './context/global-context';
 import { GlobalStyle } from './GlobalStyle';
+import { ThemeProvider } from 'styled-components';
+import { theme } from "./theme";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -13,20 +15,22 @@ const queryClient = new QueryClient({
       refetchOnWindowFocus: false,
       staleTime: 1000 * 60 * 60,
       retry: 1,
-      keepPreviousData: true
+      keepPreviousData: true,
     },
   }
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <GlobalProvider>
-      <QueryClientProvider client={queryClient} >
-        <ReactQueryDevtools />
-        <GlobalStyle />
-        <RickMortyApp />
-      </QueryClientProvider>
-    </GlobalProvider>
+    <ThemeProvider theme={theme}>
+      <GlobalProvider>
+        <QueryClientProvider client={queryClient} >
+          <ReactQueryDevtools />
+          <GlobalStyle />
+          <RickMortyApp />
+        </QueryClientProvider>
+      </GlobalProvider>
+    </ThemeProvider>
   </React.StrictMode>
 );
 
