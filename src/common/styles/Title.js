@@ -7,10 +7,10 @@ export const Title = styled.h2`
     padding: 20px;
     font-size: 70px;
     letter-spacing: 4px;
-    text-shadow: 4px 4px 6px rgba(66, 68, 90, 1);
-    color: rgb(217,209,198);
+    text-shadow: 4px 4px 6px ${({ theme }) => theme.color.secondaryColor};
+    color: ${({ theme }) => theme.color.primaryColor};
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         font-size: 42px;
         text-align: left;
     }
@@ -18,7 +18,7 @@ export const Title = styled.h2`
     ${({ big }) => big && css`
         font-size: 80px;
 
-        @media(max-width: 767px) {
+        @media(max-width: ${({ theme }) => theme.breakpoint.mobile}) {
             text-align: center;
         }
     `}

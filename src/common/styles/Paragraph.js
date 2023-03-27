@@ -5,7 +5,7 @@ export const Paragraph = styled.p`
     font-weight: 600;
     text-align: center;
 
-    @media (max-width: 767px) {
+    @media (max-width: ${({ theme }) => theme.breakpoint.mobile}) {
         font-size: 18px;
     }
 `;

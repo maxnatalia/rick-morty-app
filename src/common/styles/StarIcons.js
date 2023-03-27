@@ -6,7 +6,7 @@ const StarIcons = css`
     font-size: 60px;
     padding: 10px;
     cursor: pointer;
-    color: rgb(251,249,118);
+    color: ${({ theme }) => theme.color.specialColor};
     transition: all .5s ease-in-out;
     justify-self: center;
 
@@ -18,7 +18,7 @@ const StarIcons = css`
     ${({ big }) => big && css`
         font-size: 80px;
 
-        @media(max-width:767px) {
+        @media(max-width:${({ theme }) => theme.breakpoint.mobile}) {
             font-size: 60px;
         }
     `}
