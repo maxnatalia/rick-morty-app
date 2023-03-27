@@ -1,12 +1,12 @@
 import { Routes, Route, HashRouter } from "react-router-dom";
-import HomePage from "./pages/home/HomePage";
-import ErrorPage from "./pages/error/ErrorPage";
-import SingleCharacterPage from "./pages/singleCharacter/SingleCharacterPage";
-import LocationsPage from "./pages/locations/LocationsPage";
-import CharactersPage from "./pages/characters/CharactersPage";
-import EpisodesPage from "./pages/episodes/EpisodesPage";
-import FavouritesPage from "./pages/favourites/FavouritesPage";
-import QuizPage from "./pages/quiz/QuizPage";
+import HomePage from "./pages/HomePage";
+import ErrorPage from "./pages/ErrorPage";
+import SingleCharacterPage from "./pages/SingleCharacterPage";
+import LocationsPage from "./pages/LocationsPage";
+import CharactersPage from "./pages/CharactersPage";
+import EpisodesPage from "./pages/EpisodesPage";
+import FavouritesPage from "./pages/FavouritesPage";
+import QuizPage from "./pages/QuizPage";
 
 const RickMortyApp = () => {
     return (
