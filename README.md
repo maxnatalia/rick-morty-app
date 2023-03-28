@@ -11,19 +11,29 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## 📌Description:
 
 - Favourites characters - you can add your favourites characters and storage them in localStorage
+  ![favourites.png](favourites.png)
 
 - Quiz - you can test your knowledge of Rick and Morty
+  ![quiz.png](quiz.png)
 
 - This project contains search:
 
   - for characters:
+
     - search by gender, status, species and name
-  - for localizations:
+      ![characters.png](characters.png)
+
+  - for locations:
+
     - search by name, type and dimensions
+      ![locations.png](locations.png)
+
   - for episodes:
     - search by name
+      ![episodes.png](episodes.png)
 
 - Furthermore, each page has its own pagination, you can also display all data for single character.
+  ![singleCharacter.png](singleCharacter.png)
 
 ## 🛠️ Technologies:
 
