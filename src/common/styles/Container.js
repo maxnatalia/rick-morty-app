@@ -6,7 +6,7 @@ export const Container = styled.div`
     background-image: 
         linear-gradient(to right, ${({ theme }) => theme.color.primaryColor}, ${({ theme }) => theme.color.lightColor}), 
         url("${background}");
-    width: 100%;
-    min-height: 100vh;
     background-position: center;
+    min-height: 100vh;
+    max-width: 100vw;
 `;
