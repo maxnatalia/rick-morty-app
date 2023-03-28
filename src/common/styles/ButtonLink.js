@@ -30,8 +30,8 @@ export const ButtonLink = styled(Link)`
         top:0;
         right: 0;
         z-index: 10;
-        padding: 5px 10px;
-        margin: 10px;
+        padding: 5px;
+        margin: 20px;
     `}
 
     &:hover {

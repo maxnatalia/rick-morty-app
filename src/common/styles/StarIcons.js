@@ -4,7 +4,7 @@ import { AiOutlineStar } from "react-icons/ai";
 
 const StarIcons = css`
     font-size: 60px;
-    padding: 10px;
+    padding: 5px;
     cursor: pointer;
     color: ${({ theme }) => theme.color.specialColor};
     transition: all .5s ease-in-out;
